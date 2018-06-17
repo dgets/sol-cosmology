@@ -9,7 +9,9 @@
 #declare Mercury = object {
   sphere {
     <0, 0, 0>, MERCURY_DIAMETER
-    color OrangeRed
+    pigment {
+	color OrangeRed
+    }
   }
 }
 

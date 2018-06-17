@@ -12,9 +12,13 @@
 //time values are expressed in earth days, except where otherwise noted
 
 //other necessary constants
+//earth
 #declare EARTH_DAY_IN_HOURS = 23 + (56 / 60);
 #declare EARTH_DAY_IN_MINUTES = EARTH_DAY_IN_HOURS * 60;
 #declare EARTH_YEAR_IN_DAYS = 365.25;
+
+//sol
+#declare SOL_DIAMETER = 864938;
 
 //inner/rocky planetary bodies
 //mercury
@@ -34,6 +38,11 @@
 #declare EARTH_DIAMETER = 7926;
 #declare EARTH_DAY = 0.9333;
 #declare EARTH_YEAR = 365.25;
+//earth's moon
+#declare EARTH_MOON_ORBIT = 27.3;
+#declare EARTH_MOON_AVG_DISTANCE_FROM_EARTH = 238855;
+#declare EARTH_MOON_DIAMETER = 2159;
+#declare EARTH_MOON_CIRCUMFERENCE = 6783;
 
 //mars
 #declare MARS_AVG_DIST = 141700000;

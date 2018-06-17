@@ -13,9 +13,10 @@
 
 //other necessary constants
 #declare EARTH_DAY_IN_HOURS = 23 + (56 / 60);
+#declare EARTH_DAY_IN_MINUTES = EARTH_DAY_IN_HOURS * 60;
 #declare EARTH_YEAR_IN_DAYS = 365.25;
 
-//planetary bodies
+//inner/rocky planetary bodies
 //mercury
 #declare MERCURY_AVG_DIST = 36000000;
 #declare MERCURY_DIAMETER = 3031;
@@ -46,10 +47,46 @@
 //check for errors in my calculations (unlike just adding the decimals that
 //I'm pulling out of the calculator here, as I was doing above)
 
+//outer/gaseous 'giant' planetary bodies
 //jupiter
 #declare JUPITER_AVG_DIST = 483500000;
 #declare JUPITER_DIAMETER = 88846;
 #declare JUPITER_DAY = ((9 * 60) + 55) / (EARTH_DAY_IN_HOURS * 60);
 #declare JUPITER_YEAR = 11.86;	//decimal taken from the source listed
+
+//saturn
+#declare SATURN_AVG_DIST = 888750000;
+#declare SATURN_DIAMETER = 74900;
+#declare SATURN_DAY = ((10 * 60) + 39) / EARTH_DAY_IN_MINUTES;
+#declare SATURN_YEAR = 29;
+
+//uranus
+#declare URANUS_AVG_DIST = 1783744300;
+#declare URANUS_DIAMETER = 31763;
+#declare URANUS_DAY = ((17 * 60) + 14) / EARTH_DAY_IN_MINUTES;
+#declare URANUS_YEAR = 84;
+
+//neptune
+#declare NEPTUNE_AVG_DIST = 2797770000;
+#declare NEPTUNE_DIAMETER = 30779;
+#declare NEPTUNE_DAY = ((16 * 60) + 7) / EARTH_DAY_IN_MINUTES;
+#declare NEPTUNE_YEAR = 164.8;
+
+//'dwarf' planetary bodies
+//pluto
+//NOTE: eccentric orbit changes the AVG_DIST data format & constant names
+//at some point it would be very helpful to obtain the full ellipse data
+#declare PLUTO_MIN_DIST = 275690200;
+#declare PLUTO_MAX_DIST = 4583190000;
+#declare PLUTO_DIAMETER = 1473;
+#declare PLUTO_DAY = ((6 * 3600) + (9 * 60)) / EARTH_DAY_IN_MINUTES;
+#declare PLUTO_YEAR = 248;
+
+//ceres
+#declare CERES_AVG_DIST = 257031000;
+#declare CERES_DIAMETER = 590;
+#declare CERES_DAY = ((9 * 60) + 5) / EARTH_DAY_IN_MINUTES;
+#declare CERES_YEAR = 4 + (220 / EARTH_YEAR);
+
 
 

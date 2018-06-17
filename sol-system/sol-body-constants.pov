@@ -11,32 +11,33 @@
 
 //planetary bodies
 //mercury
-#define MERCURY_AVG_DIST 36000000
-#define MERCURY_DIAMETER 3031
-#define MERCURY_DAY 59
-#define MERCURY_YEAR 88
+#declare MERCURY_AVG_DIST = 36000000;
+#declare MERCURY_DIAMETER = 3031;
+#declare MERCURY_DAY = 59;
+#declare MERCURY_YEAR = 88;
 
 //venus
-#define VENUS_AVG_DIST 67000000
-#define VENUS_DIAMETER 7521
-#define VENUS_DAY 243
-#define VENUS_YEAR 224
+#declare VENUS_AVG_DIST = 67000000;
+#declare VENUS_DIAMETER = 7521;
+#declare VENUS_DAY = 243;
+#declare VENUS_YEAR = 224;
 
 //earth
-#define EARTH_AVG_DIST 92960000
-#define EARTH_DIAMETER 7926
-#define EARTH_DAY 0.9333
-#define EARTH_YEAR 365.25
+#declare EARTH_AVG_DIST = 92960000;
+#declare EARTH_DIAMETER = 7926;
+#declare EARTH_DAY = 0.9333;
+#declare EARTH_YEAR = 365.25;
 
 //mars
-#define MARS_AVG_DIST 141700000
-#define MARS_DIAMETER 4222
-#define MARS_DAY 1.6167
-#define MARS_YEAR 687
+#declare MARS_AVG_DIST = 141700000;
+#declare MARS_DIAMETER = 4222;
+#declare MARS_DAY = 1.6167;
+#declare MARS_YEAR = 687;
 
 //NOTE: don't forget to add the asteroid belt data here
 
 //jupiter
-#define JUPITER_AVG_DIST 483500000
-#define JUPITER_DIAMETER 88846
-#define JUPITER_DAY 
+#declare JUPITER_AVG_DIST = 483500000;
+#declare JUPITER_DIAMETER = 88846;
+#declare JUPITER_DAY
+

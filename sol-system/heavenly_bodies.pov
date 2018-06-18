@@ -5,6 +5,16 @@
 #include "colors.inc"
 #include "sol-system/sol-body-constants.inc"
 
+//sol
+#declare Sol = object {
+  sphere {
+    <0, 0, 0>, SOL_DIAMETER
+    pigment {
+	color Yellow
+    }
+  }
+}
+
 //mercury
 #declare Mercury = object {
   sphere {

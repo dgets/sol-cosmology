@@ -17,6 +17,9 @@
 #declare EARTH_DAY_IN_MINUTES = EARTH_DAY_IN_HOURS * 60;
 #declare EARTH_YEAR_IN_DAYS = 365.25;
 
+//misc constants
+#declare AU = 92960000;
+
 //sol
 #declare SOL_DIAMETER = 864938;
 
@@ -34,7 +37,7 @@
 #declare VENUS_YEAR = 224;
 
 //earth
-#declare EARTH_AVG_DIST = 92960000;
+#declare EARTH_AVG_DIST = AU;	//92960000;
 #declare EARTH_DIAMETER = 7926;
 #declare EARTH_DAY = 0.9333;
 #declare EARTH_YEAR = 365.25;
@@ -55,6 +58,19 @@
 //to doing the day/year computation in here so that others can feel free to
 //check for errors in my calculations (unlike just adding the decimals that
 //I'm pulling out of the calculator here, as I was doing above)
+
+//main asteroid belt
+//NOTE: I noticed some conflicting facts from various sources regarding the
+//different dimensions of the main asteroid belt; this should probably be
+//researched a bit further at some point in the future
+//NOTE: C/S/M-type asteroids reside at different minor radii within the main
+//belt, as well
+#declare MAIN_ASTEROID_BELT_INNER_RADIUS = AU * 2.2;
+#declare MAIN_ASTEROID BELT_OUTER_RADIUS = AU * 3.2;
+//NOTE: this would leave the torus width @ 1 AU, obviously; however, space.com
+//insists that the belt is 140,000,000mi across :P
+//NOTE: [final] it may be worth researching the 'Kirkwood Gaps' caused by the
+//orbital resonances with Jupiter, if plotting this in more existing detail
 
 //outer/gaseous 'giant' planetary bodies
 //jupiter

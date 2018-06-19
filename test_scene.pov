@@ -59,7 +59,32 @@ light_source {
 
 //between sol & mercury
 light_source {
-  <MERCURY_AVG_DIST / 2, 0, 0>, color White
+  <(MERCURY_AVG_DIST / 2) + SOL_DIAMETER, 0, 0>, color White
+}
+
+//between mercury & venus
+light_source {
+  <((VENUS_AVG_DIST - MERCURY_AVG_DIST) / 2) + MERCURY_AVG_DIST, 0, 0>,
+    color White
+}
+
+//between venus & earth
+light_source {
+  <((EARTH_AVG_DIST - VENUS_AVG_DIST) / 2) + VENUS_AVG_DIST, 0, 0>,
+    color White
+}
+
+//between earth & mars
+light_source {
+  <((MARS_AVG_DIST - EARTH_AVG_DIST) / 2) + EARTH_AVG_DIST, 0, 0>,
+    color White
+}
+
+//between mars & main asteroid belt
+light_source {
+  <((MAIN_ASTEROID_BELT_MAJOR_RADIUS - MARS_AVG_DIST) / 2) + MARS_AVG_DIST,
+   0, 0>,
+    color White
 }
 
 //lighting for mercury testing
@@ -81,11 +106,33 @@ object {
   //(no translate necessary @ center of the system)_
 }
 
-//mercury
+//inner/rocky planets
 object {
   Mercury
   //the following was for testing, obviously
   //scale <10, 10, 10>
-  translate <MERCURY_AVG_DIST / 50, 0, 0>
+  translate <MERCURY_AVG_DIST, 0, 0>
 }
+
+object {
+  Venus
+  translate <VENUS_AVG_DIST, 0, 0>
+}
+
+object {
+  Earth
+  translate <EARTH_AVG_DIST, 0, 0>
+}
+
+object {
+  Mars
+  translate <MARS_AVG_DIST, 0, 0>
+}
+
+//asteroid belt
+object {
+  Main_Asteroid_Belt
+  //should not need to be translated due to proper creation about the origin
+}
+
 

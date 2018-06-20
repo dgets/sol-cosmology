@@ -19,22 +19,22 @@
 //}
 
 //--Mercury Camera 1--
-camera {
-  location <(MERCURY_AVG_DIST * 1), INNER_PLANETS_CAMERA_DISTANCE_ABOVE, 
-	    (INNER_PLANETS_CAMERA_DISTANCE_BEHIND / 2)>
-  look_at <MERCURY_AVG_DIST, 0, (MERCURY_DIAMETER / 2)>
-}
+//camera {
+//  location <(MERCURY_AVG_DIST * 1), INNER_PLANETS_CAMERA_DISTANCE_ABOVE, 
+//	    (INNER_PLANETS_CAMERA_DISTANCE_BEHIND / 2)>
+//  look_at <MERCURY_AVG_DIST, 0, (MERCURY_DIAMETER / 2)>
+//}
 
 //--Mercury Camera 2-- (looking downish)
 //camera {
 //  location <
 
 //--Venus Camera 1--
-//camera {
-//  location <(VENUS_AVG_DIST * 1), INNER_PLANETS_CAMERA_DISTANCE_ABOVE,
-//	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
-//  look_at <VENUS_AVG_DIST, 0, (VENUS_DIAMETER / 2)>
-//}
+camera {
+  location <(VENUS_AVG_DIST * 1), (INNER_PLANETS_CAMERA_DISTANCE_ABOVE * 2.75),
+	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
+  look_at <VENUS_AVG_DIST, (VENUS_DIAMETER / 2), (VENUS_DIAMETER / 2)>
+}
 
 //--Venus Camera 2-- (looking downish)
 //camera {
@@ -144,7 +144,7 @@ object {
 
 object {
   Venus
-  scale <10, 10, 10>
+  //scale <10, 10, 10>
   translate <VENUS_AVG_DIST, 0, 0>
 }
 

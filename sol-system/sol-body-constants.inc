@@ -19,6 +19,8 @@
 
 //misc constants
 #declare AU = 92960000;
+#declare INNER_PLANETS_CAMERA_DISTANCE_ABOVE = 4000;
+#declare INNER_PLANETS_CAMERA_DISTANCE_BEHIND = -20000;
 
 //sol
 #declare SOL_DIAMETER = 864938;
@@ -66,7 +68,11 @@
 //NOTE: C/S/M-type asteroids reside at different minor radii within the main
 //belt, as well
 #declare MAIN_ASTEROID_BELT_INNER_RADIUS = AU * 2.2;
-#declare MAIN_ASTEROID BELT_OUTER_RADIUS = AU * 3.2;
+#declare MAIN_ASTEROID_BELT_OUTER_RADIUS = AU * 3.2;
+#declare MAIN_ASTEROID_BELT_MINOR_RADIUS = 
+  ((MAIN_ASTEROID_BELT_OUTER_RADIUS - MAIN_ASTEROID_BELT_INNER_RADIUS) / 2);
+#declare MAIN_ASTEROID_BELT_MAJOR_RADIUS = MAIN_ASTEROID_BELT_INNER_RADIUS +
+  MAIN_ASTEROID_BELT_MINOR_RADIUS;
 //NOTE: this would leave the torus width @ 1 AU, obviously; however, space.com
 //insists that the belt is 140,000,000mi across :P
 //NOTE: [final] it may be worth researching the 'Kirkwood Gaps' caused by the

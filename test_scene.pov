@@ -12,10 +12,36 @@
 //camera angles
 //first is a camera angle above the solar system plane, looking down, towards
 //the eastern limb of sol, from 4m miles
+//--Sol Camera 1--
+//camera {
+//  location <0, 500000, -4000000>
+//  look_at <800000, 0, 0>
+//}
+
+//--Mercury Camera 1--
 camera {
-  location <0, 500000, -4000000>
-  look_at <800000, 0, 0>
+  location <(MERCURY_AVG_DIST * 1), INNER_PLANETS_CAMERA_DISTANCE_ABOVE, 
+	    (INNER_PLANETS_CAMERA_DISTANCE_BEHIND / 2)>
+  look_at <MERCURY_AVG_DIST, 0, (MERCURY_DIAMETER / 2)>
 }
+
+//--Mercury Camera 2-- (looking downish)
+//camera {
+//  location <
+
+//--Venus Camera 1--
+//camera {
+//  location <(VENUS_AVG_DIST * 1), INNER_PLANETS_CAMERA_DISTANCE_ABOVE,
+//	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
+//  look_at <VENUS_AVG_DIST, 0, (VENUS_DIAMETER / 2)>
+//}
+
+//--Venus Camera 2-- (looking downish)
+//camera {
+//  location <VENUS_AVG_DIST, (INNER_PLANETS_CAMERA_DISTANCE_ABOVE +
+//	    (VENUS_DIAMETER / 2)), 0>
+//  look_at <VENUS_AVG_DIST, (VENUS_DIAMETER / 2), (VENUS_DIAMETER / 2)>
+//}
 
 //aaand since that camera isn't doing SHIT, let's try another one
 //camera {
@@ -33,8 +59,10 @@ camera {
 //there must be a way to make it a certain percentage transparent...
 plane {
   <0, 1, 0>, -1
-  pigment { checker color White color Black }
+  pigment { checker color DarkSlateGray color Black }
   rotate y*45
+  //it might be nice to scale this up so that from long expanses the checker-
+  //board can be used for reference somewhat
   finish { Dull }
 }
 
@@ -116,6 +144,7 @@ object {
 
 object {
   Venus
+  scale <10, 10, 10>
   translate <VENUS_AVG_DIST, 0, 0>
 }
 

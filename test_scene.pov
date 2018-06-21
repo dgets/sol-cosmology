@@ -30,11 +30,11 @@
 //  location <
 
 //--Venus Camera 1--
-camera {
-  location <(VENUS_AVG_DIST * 1), (INNER_PLANETS_CAMERA_DISTANCE_ABOVE * 2.75),
-	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
-  look_at <VENUS_AVG_DIST, (VENUS_DIAMETER / 2), (VENUS_DIAMETER / 2)>
-}
+//camera {
+//  location <(VENUS_AVG_DIST * 1), (INNER_PLANETS_CAMERA_DISTANCE_ABOVE * 2.75),
+//	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
+//  look_at <VENUS_AVG_DIST, (VENUS_DIAMETER / 2), (VENUS_DIAMETER / 2)>
+//}
 
 //--Venus Camera 2-- (looking downish)
 //camera {
@@ -43,6 +43,34 @@ camera {
 //  look_at <VENUS_AVG_DIST, (VENUS_DIAMETER / 2), (VENUS_DIAMETER / 2)>
 //}
 
+//--Earth Cam 1--
+//camera {
+//  location <EARTH_AVG_DIST, (INNER_PLANETS_CAMERA_DISTANCE_ABOVE * 2.75),
+//	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
+//  look_at <EARTH_AVG_DIST, (EARTH_DIAMETER / 2), (EARTH_DIAMETER / 2)>
+//}
+
+//--Mars Camera 1--
+//camera {
+//  location <MARS_AVG_DIST, (INNER_PLANETS_CAMERA_DISTANCE_ABOVE * 2),
+//	    INNER_PLANETS_CAMERA_DISTANCE_BEHIND>
+//  look_at <MARS_AVG_DIST, (MARS_DIAMETER / 2), (MARS_DIAMETER / 2)>
+//}
+
+//--Main 'Roidbelt Camera 1--
+camera {
+  location <(MAIN_ASTEROID_BELT_MAJOR_RADIUS * 0.65), 
+	    (MAIN_ASTEROID_BELT_MINOR_RADIUS * 2), 0>
+  look_at <MAIN_ASTEROID_BELT_MAJOR_RADIUS,
+	   MAIN_ASTEROID_BELT_MINOR_RADIUS,
+	   0>
+}
+//accessory light source
+light_source {
+  <(MAIN_ASTEROID_BELT_MAJOR_RADIUS * 0.94),
+   (MAIN_ASTEROID_BELT_MINOR_RADIUS * 1.1), 0>, color White
+}
+  
 //aaand since that camera isn't doing SHIT, let's try another one
 //camera {
 //  location <0, 90000, 200000>

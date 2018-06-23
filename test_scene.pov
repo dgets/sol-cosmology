@@ -81,7 +81,7 @@
 		   Sol_Start_Look_At_Y,
 		   Sol_Start_Look_At_Z>
 	}
-      #else
+      #else if (clock <= (1 / (Inner_System_Bodies)))
 	//looking at Mercury while approaching
 	//NOTE: I think that this is going to start WAAAAAY too early, as
 	//we'll only be about 1/4th of the way from Sol to Mercury, amirite?

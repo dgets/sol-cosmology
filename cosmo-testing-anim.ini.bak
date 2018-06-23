@@ -4,16 +4,16 @@
 ;started: 21 Jun 18
 
 ;general options
-Width=300
-Height=400
+Width=400
+Height=300
 
 Input_File_Name=test_scene.pov
 Output_File_Name=anim/testing/
 
 Initial_Frame=1
-Final_Frame=60
+Final_Frame=60 * 0.08334    ;midpoint to Mercury
 Initial_Clock=0
-Final_Clock=1
+Final_Clock=0.08334         ;midpoint to Mercury
 
 Quality=8
 

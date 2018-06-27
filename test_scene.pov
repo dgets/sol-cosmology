@@ -68,31 +68,40 @@
 	   0>
   }
 #else
+
   //animation camera work
+  
   #if (clock <= (1 / Inner_System_Bodies))
     //let's get some frames of Sol-Mercury sequence
+      
       #if (clock <= (1 / (Inner_System_Bodies * 2)))
-	//looking at Sol while moving away
-	camera {
-	  location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
-		    (Sol_Start_Y + (Sol_Cam_Delta_Y * frame_number)),
-		    (Sol_Start_Z + (Sol_Cam_Delta_Z * frame_number))>
-	  look_at <Sol_Start_Look_At_X,
-		   Sol_Start_Look_At_Y,
-		   Sol_Start_Look_At_Z>
-	}
+	    //looking at Sol while moving away
+	    camera {
+	      location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
+		        (Sol_Start_Y + (Sol_Cam_Delta_Y * frame_number)),
+		        (Sol_Start_Z + (Sol_Cam_Delta_Z * frame_number))>
+		  //the following look_at should begin rotating ~180deg * y
+		  //as the frames progress from, say, (
+		  //clock--frame < ((1 / (Inner_System_Bodies * 4)) - Merc) through
+		  //clock--frame >= ((1 / (Inner_System_Bodies * 4)) + Merc), if that
+		  //makes sense; I'm not totally sure it will, I'm half asleep and it's
+		  //not making the best sense to me here, either
+	      look_at <Sol_Start_Look_At_X,
+		       Sol_Start_Look_At_Y,
+		       Sol_Start_Look_At_Z>
+	    }
       #else if (clock <= (1 / (Inner_System_Bodies)))
-	//looking at Mercury while approaching
-	//NOTE: I think that this is going to start WAAAAAY too early, as
-	//we'll only be about 1/4th of the way from Sol to Mercury, amirite?
-	camera {
-	  location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
-		    (Sol_Start_Y + (Sol_Cam_Delta_Y * frame_number)),
-		    (Sol_Start_Z + (Sol_Cam_Delta_Z * frame_number))>
-	  look_at <Sol_End_Look_At_X,
-		   Sol_End_Look_At_Y,
-		   Sol_End_Look_At_Z>
-	}
+	    //looking at Mercury while approaching
+	    //NOTE: I think that this is going to start WAAAAAY too early, as
+	    //we'll only be about 1/4th of the way from Sol to Mercury, amirite?
+	    camera {
+	      location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
+		        (Sol_Start_Y + (Sol_Cam_Delta_Y * frame_number)),
+		        (Sol_Start_Z + (Sol_Cam_Delta_Z * frame_number))>
+	      look_at <Sol_End_Look_At_X,
+		       Sol_End_Look_At_Y,
+		       Sol_End_Look_At_Z>
+	    }
       #end
 
   #end

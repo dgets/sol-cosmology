@@ -4,6 +4,9 @@
 *.jpeg
 *.gif
 *.bak
-
+*.pov.bak
+*.inc.bak
 *.pov-state
 
+*.bak
+*.bak

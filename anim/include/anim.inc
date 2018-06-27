@@ -14,10 +14,12 @@
 #declare Sol_Start_X = 0;
 #declare Sol_Start_Y = (SOL_DIAMETER * 2);
 #declare Sol_Start_Z = (SOL_DIAMETER * -3);
+#declare Sol_StartV = <Sol_Start_X, Sol_Start_Y, Sol_Start_Z);
 
 #declare Sol_End_X = (MERCURY_AVG_DIST / 2);
 #declare Sol_End_Y = INNER_PLANETS_CAMERA_DISTANCE_ABOVE;
 #declare Sol_End_Z = (INNER_PLANETS_CAMERA_DISTANCE_BEHIND / 2);
+#declare Sol_EndV = <Sol_End_X, Sol_End_Y, Sol_End_Z>;
 
 //--deltas
 #declare Sol_Cam_Delta_X = ((Sol_End_X - Sol_Start_X) / 
@@ -31,10 +33,17 @@
 #declare Sol_Start_Look_At_X = (SOL_DIAMETER / 2);
 #declare Sol_Start_Look_At_Y = (SOL_DIAMETER / 2);
 #declare Sol_Start_Look_At_Z = (SOL_DIAMETER / -2);
+#declare Sol_Start_Look_AtV = <Sol_Start_Look_At_X, Sol_Start_Look_At_Y,
+                               Sol_Start_Look_At_Z>;
 
 #declare Sol_End_Look_At_X = MERCURY_AVG_DIST;
 #declare Sol_End_Look_At_Y = (MERCURY_DIAMETER / 2);
 #declare Sol_End_Look_At_Z = (MERCURY_DIAMETER / -2);
+#declare Sol_End_Look_AtV = <Sol_End_Look_At_X, Sol_End_Look_At_Y,
+                             Sol_End_Look_At_Z>;  
+                             
+//switching view camera roll
+
 
 //--deltas
 //NOTE: I think that, at this point, it may be easier to just have a scheme

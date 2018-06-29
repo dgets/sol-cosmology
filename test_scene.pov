@@ -74,7 +74,15 @@
   #if (clock <= (1 / Inner_System_Bodies))
     //let's get some frames of Sol-Mercury sequence
       
-      #if (clock <= (1 / (Inner_System_Bodies * 2)))
+      //NOTE:
+      ////switching view camera roll
+      //so for this, I think a good idea would be to roll on the Z axis 180 degrees,
+      //starting from the original 'left' view of the 'departing' Sol, in this case,
+      //towards the incoming planet, from the 'right'
+      //this can be started from 1/8th of the distance from the midpoint of the two
+      //until the corresponding distance beyond the midpoint
+      
+      #if (clock <= ((1 / (Inner_System_Bodies * 2)) - (1 / (Inner_System_Bodies * 8))
 	    //looking at Sol while moving away
 	    camera {
 	      location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
@@ -90,6 +98,17 @@
 		       Sol_Start_Look_At_Y,
 		       Sol_Start_Look_At_Z>
 	    }
+	  #else if (clock > ((1 / (Inner_System_Bodies * 2)) - (1 / (Inner_System_Bodies * 8)) && \
+	           (clock <= ((1 / (Inner_System_Bodies * 2)) + (1 / (Inner_System_Bodies * 8)))
+	    //here's where we'll do the Z-axis 'roll' of camera pointed at Sol to camera pointed
+	    //at Mercury
+	    camera {
+	      location <(Sol_Start_X + (Sol_Cam_Delta_X * frame_number)),
+	                (Sol_Start_Y + (Sol_Cam_Delta_Y * frame_number)),
+	                (Sol_Start_Z + (Sol_Cam_Delta_Z * frame_number))>
+	      //tricky part follows
+	      #if 
+	    
       #else if (clock <= (1 / (Inner_System_Bodies)))
 	    //looking at Mercury while approaching
 	    //NOTE: I think that this is going to start WAAAAAY too early, as

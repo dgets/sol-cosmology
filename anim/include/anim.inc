@@ -40,10 +40,7 @@
 #declare Sol_End_Look_At_Y = (MERCURY_DIAMETER / 2);
 #declare Sol_End_Look_At_Z = (MERCURY_DIAMETER / -2);
 #declare Sol_End_Look_AtV = <Sol_End_Look_At_X, Sol_End_Look_At_Y,
-                             Sol_End_Look_At_Z>;  
-                             
-//switching view camera roll
-
+                             Sol_End_Look_At_Z>;
 
 //--deltas
 //NOTE: I think that, at this point, it may be easier to just have a scheme

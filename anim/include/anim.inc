@@ -4,6 +4,31 @@
 
 #include "sol-system/sol-body-constants.inc"
 
+//general macros
+#macro Get_Transit_Distance(StartX, StartY, StartZ, DestX, DestY, DestZ)
+ //we're going to assume 10 frames of transit for each accelerated interval, 
+ //which will be leaving 10 frames for different celestial body views from
+ //close distance out of the original 200 frames; this will have to be dynamic 
+ //in the future
+ //#local Trav_Dist = sqrt(pow(DestX - StartX, 2) + pow(DestY - StartY, 2) + \
+ //			 pow(DestZ - StartZ, 2))
+ //that shouldn't be necessary
+
+ #local XDist = (DestX - StartX) / 10
+ #local YDist = (DestY - StartY) / 10
+ #local ZDist = (DestZ - StartZ) / 10
+
+ #for (interval, 0, 9)
+  //get our coordinates
+  camera {
+	location  <StartX + (XDist * interval), StartY + (YDist * interval), \
+	 	   StartZ + (ZDist * interval)>
+	look_at   <DestX, DestY, DestZ>	//panning from start to dest would be
+					//nice but I'm not doing that nao
+  }
+ #end	
+#end
+
 //1 = Sol
 //2-5 = Inner Planets
 //6 = Main 'Roid Belt
@@ -45,4 +70,7 @@
 //that's the theory, anyway, when I start working on this a bit more
 
 //Mercury-Venus Sequence
+
+
+
 

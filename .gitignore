@@ -3,6 +3,7 @@
 *.jpg
 *.jpeg
 *.gif
-
+*.bak
 *.pov-state
+*.*~
 

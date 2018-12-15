@@ -109,6 +109,8 @@
 //at some point it would be very helpful to obtain the full ellipse data
 #declare PLUTO_MIN_DIST = 275690200;
 #declare PLUTO_MAX_DIST = 4583190000;
+#declare PLUTO_AVG_DIST = PLUTO_MIN_DIST + 
+			  ((PLUTO_MAX_DIST - PLUTO_MIN_DIST) / 2);
 #declare PLUTO_DIAMETER = 1473;
 #declare PLUTO_DAY = ((6 * 3600) + (9 * 60)) / EARTH_DAY_IN_MINUTES;
 #declare PLUTO_YEAR = 248;

@@ -39,8 +39,8 @@
 #declare Sol_Start_X = 0;
 #declare Sol_Start_Y = (SOL_DIAMETER * 2);
 #declare Sol_Start_Z = (SOL_DIAMETER * -3);
-#declare Sol_StartV = <Sol_Start_X, Sol_Start_Y, Sol_Start_Z);
-#declare Sol_LocationV = Sol_StartV
+#declare Sol_StartV = <Sol_Start_X, Sol_Start_Y, Sol_Start_Z>;
+#declare Sol_LocationV = Sol_StartV;
 
 #declare Sol_End_X = (MERCURY_AVG_DIST / 2);
 #declare Sol_End_Y = INNER_PLANETS_CAMERA_DISTANCE_ABOVE;
@@ -83,9 +83,9 @@
 //skipping the above right now for a different method being tested
 //NOTE: This makes adjustments from the center to put it onto the surface of
 //the sphere
-#declare Pluto_Location_X = PLUTO_AVG_DIST - (PLUTO_DIAMETER / 2)
-#declare Pluto_Location_Y = PLUTO_DIAMETER / -2
-#declare Pluto_Location_Z = PLUTO_DIAMETER / -2
+#declare Pluto_Location_X = PLUTO_AVG_DIST - (PLUTO_DIAMETER / 2);
+#declare Pluto_Location_Y = PLUTO_DIAMETER / -2;
+#declare Pluto_Location_Z = PLUTO_DIAMETER / -2;
 #declare Pluto_LocationV = <PLUTO_AVG_DIST - (PLUTO_DIAMETER / 2),
 			    (PLUTO_DIAMETER / -2),
-			    (PLUTO_DIAMETER / -2)>
+			    (PLUTO_DIAMETER / -2)>;

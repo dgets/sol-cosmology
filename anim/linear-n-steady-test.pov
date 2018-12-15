@@ -6,16 +6,21 @@
 //Just a path through the solar system for the cameras, with the different
 //bodies placed at scale accurate distances.
 
+#include "colors.inc"
+#include "shapes.inc"
+#include "finish.inc"
+
+#include "sol-system/heavenly_bodies.pov"
 #include "sol-system/sol-body-constants.inc"
 #include "anim/include/anim.inc"
 
-#declare JourneyStartV = Sol_LocationV
-#declare JourneyEndV = Pluto_LocationV
+#declare JourneyStartV = Sol_LocationV;
+#declare JourneyEndV = Pluto_LocationV;
 
 //lighting
 //above Sol
 light_source {
-	<0, SOL_DIAMETER * 2, 0>, color White
+	<0, (SOL_DIAMETER * 2), 0>, color White
 }
 
 //between sol & mercury
@@ -54,16 +59,16 @@ light_source {
 //}
 
 //just a few things to set up (move these to the right location later)
-#declare X_Journey_Interval = (Pluto_Location_X - Sol_Start_X) * frame_number
-#declare Y_Journey_Interval = (Pluto_Location_Y - Sol_Start_Y) * frame_number
-#declare Z_Journey_Interval = (Pluto_Location_Z - Sol_Start_Z) * frame_number
+#declare X_Journey_Interval = (Pluto_Location_X - Sol_Start_X) * frame_number;
+#declare Y_Journey_Interval = (Pluto_Location_Y - Sol_Start_Y) * frame_number;
+#declare Z_Journey_Interval = (Pluto_Location_Z - Sol_Start_Z) * frame_number;
 
 //here's where we're going to try the new functionality with the camera
 //viewpoint animation macro and the like...
-#declare ViewOrTransit = 1	//1 for view, -1 for transit
-#declare tmpFromMod = mod(frame_number, 20)
+#declare ViewOrTransit = 1;	//1 for view, -1 for transit
+#declare tmpFromMod = mod(frame_number, 20);
 #if (tmpFromMod = 0)
-  #declare ViewOrTransit = ViewOrTransit * -1
+  #declare ViewOrTransit = ViewOrTransit * -1;
 #end
 
 #if (ViewOrTransit = -1)
@@ -77,7 +82,8 @@ light_source {
 	location <Sol_Start_X + (X_Journey_Interval), 
 		  Sol_Start_Y + (Y_Journey_Interval),
 		  Sol_Start_Z + (Z_Journey_Interval)>
-	look_at <Sol_Start_X>	//simple enough for testing purposes
+	look_at <Sol_Start_X, Sol_Start_Y, Sol_Start_Z>	
+		//simple enough for testing purposes
   }
 #end
 

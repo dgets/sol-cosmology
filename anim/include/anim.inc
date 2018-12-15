@@ -14,14 +14,14 @@
  //			 pow(DestZ - StartZ, 2))
  //that shouldn't be necessary
 
- #local XDist = (DestX - StartX) / 10
- #local YDist = (DestY - StartY) / 10
- #local ZDist = (DestZ - StartZ) / 10
+ #local XDist = (DestX - StartX) / 10;
+ #local YDist = (DestY - StartY) / 10;
+ #local ZDist = (DestZ - StartZ) / 10;
 
  #for (interval, 0, 9)
   //get our coordinates
   camera {
-	location  <StartX + (XDist * interval), StartY + (YDist * interval), \
+	location  <StartX + (XDist * interval), StartY + (YDist * interval),
 	 	   StartZ + (ZDist * interval)>
 	look_at   <DestX, DestY, DestZ>	//panning from start to dest would be
 					//nice but I'm not doing that nao

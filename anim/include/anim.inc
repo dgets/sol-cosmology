@@ -5,7 +5,8 @@
 #include "sol-system/sol-body-constants.inc"
 
 //general macros
-#macro Set_Transit_Camera(StartX, StartY, StartZ, DestX, DestY, DestZ)
+#macro Set_Transit_Camera(StartX, StartY, StartZ, DestX, DestY, DestZ, 
+			  interval)
  //we're going to assume 10 frames of transit for each accelerated interval, 
  //which will be leaving 10 frames for different celestial body views from
  //close distance out of the original 200 frames; this will have to be dynamic 

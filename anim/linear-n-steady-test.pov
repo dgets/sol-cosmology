@@ -82,7 +82,8 @@ light_source {
 #if (ViewOrTransit = -1)
   //we're in transit
   Set_Transit_Camera(Sol_Start_X, (Sol_Start_Y + 1), Sol_Start_Z, 
-		     Pluto_Location_X, (Pluto_Location_Y + 1), Pluto_Location_Z)
+		     Pluto_Location_X, (Pluto_Location_Y + 1), 
+		     Pluto_Location_Z, 1)
 #else
   //we're looking at one of the bodies
   //stub code for now
@@ -94,6 +95,17 @@ light_source {
 		//simple enough for testing purposes
   }
 #end
+
+//doing a plane in the system's equatorial for testing purposes
+//there must be a way to make it a certain percentage transparent...
+plane {
+  <0, 1, 0>, -1
+  pigment { checker color DarkSlateGray color Black }
+  rotate y*45
+  //it might be nice to scale this up so that from long expanses the checker-
+  //board can be used for reference somewhat
+  finish { Dull }
+}
 
 //Sol
 object {

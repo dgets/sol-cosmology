@@ -17,10 +17,17 @@
 #declare JourneyStartV = Sol_LocationV;
 #declare JourneyEndV = Pluto_LocationV;
 
+
 //lighting
 //above Sol
 light_source {
 	<0, (SOL_DIAMETER * 2), 0>, color White
+}
+
+//above the 'roid belt
+light_source {
+  <(MAIN_ASTEROID_BELT_MAJOR_RADIUS * 0.94),
+   (MAIN_ASTEROID_BELT_MINOR_RADIUS * 1.1), 0>, color White
 }
 
 //between sol & mercury
@@ -53,6 +60,7 @@ light_source {
     color White
 }
 
+
 //misc for testing
 //light_source {
 //  <10000, 1000000, -10000>, color White
@@ -73,8 +81,8 @@ light_source {
 
 #if (ViewOrTransit = -1)
   //we're in transit
-  Set_Transit_Camera(Sol_Start_X, Sol_Start_Y, Sol_Start_Z, 
-		     Pluto_Location_X, Pluto_Location_Y, Pluto_Location_Z)
+  Set_Transit_Camera(Sol_Start_X, (Sol_Start_Y + 1), Sol_Start_Z, 
+		     Pluto_Location_X, (Pluto_Location_Y + 1), Pluto_Location_Z)
 #else
   //we're looking at one of the bodies
   //stub code for now

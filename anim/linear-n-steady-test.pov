@@ -67,9 +67,12 @@ light_source {
 //}
 
 //just a few things to set up (move these to the right location later)
-#declare X_Journey_Interval = (Pluto_Location_X - Sol_Start_X) * frame_number;
-#declare Y_Journey_Interval = (Pluto_Location_Y - Sol_Start_Y) * frame_number;
-#declare Z_Journey_Interval = (Pluto_Location_Z - Sol_Start_Z) * frame_number;
+#declare X_Journey_Interval = ((Pluto_Location_X - Sol_Start_X) / 200) * 
+			      frame_number;
+#declare Y_Journey_Interval = ((Pluto_Location_Y - Sol_Start_Y) / 200) * 
+			      frame_number;
+#declare Z_Journey_Interval = ((Pluto_Location_Z - Sol_Start_Z) / 200) * 
+			      frame_number;
 
 //here's where we're going to try the new functionality with the camera
 //viewpoint animation macro and the like...
